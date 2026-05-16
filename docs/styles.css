@@ -1,0 +1,141 @@
+/* FIncoming marketing / legal site — shared styles */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f5f5f7;
+  color: #1d1d1f;
+  line-height: 1.7;
+}
+
+a { color: #12b2a0; }
+
+.site-header {
+  background: linear-gradient(160deg, #1a2238 0%, #101e3c 55%, #1e1838 100%);
+  color: #fff;
+  padding: 48px 24px 40px;
+  text-align: center;
+}
+
+.site-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.site-header p {
+  margin-top: 8px;
+  color: #a0aec0;
+  font-size: 0.95rem;
+}
+
+.site-nav {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.site-nav a {
+  color: #e8edf5;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+}
+
+.site-nav a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+main {
+  max-width: 720px;
+  margin: 48px auto;
+  padding: 0 24px 80px;
+}
+
+main.narrow-top {
+  margin-top: 32px;
+}
+
+h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  color: #101e3c;
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+p { margin-bottom: 14px; }
+
+ul, ol {
+  margin: 0 0 14px 24px;
+}
+
+li { margin-bottom: 6px; }
+
+.hero-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 8px 28px rgba(16, 30, 60, 0.08);
+  margin-bottom: 24px;
+}
+
+.hero-card h2 {
+  margin-top: 0;
+  font-size: 1.35rem;
+}
+
+.tagline {
+  font-size: 1.05rem;
+  color: #3a3a3c;
+}
+
+.cta-row {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: #12b2a0;
+  color: #fff !important;
+}
+
+.button.secondary {
+  background: transparent;
+  color: #101e3c !important;
+  border: 1px solid #c7c7cc;
+}
+
+.disclaimer-box {
+  background: #fff8f0;
+  border: 1px solid #f0dcc8;
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-size: 0.95rem;
+  margin: 20px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 32px;
+  font-size: 0.85rem;
+  color: #6e6e73;
+  border-top: 1px solid #e0e0e5;
+}
