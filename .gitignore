@@ -1,0 +1,26 @@
+# Swift / Xcode source — never commit app code to the website repo
+*.swift
+*.xcodeproj/
+*.xcworkspace/
+RetirementCalc/
+RetirementCalcTests/
+
+# Xcode build artifacts
+build/
+DerivedData/
+*.moved-aside
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivefile
+xcuserdata/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python (screenshot generator)
+__pycache__/
+*.pyc
+*.pyo
