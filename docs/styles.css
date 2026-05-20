@@ -1,5 +1,22 @@
 /* FIncoming marketing / legal site — shared styles */
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Brand wordmark typography.
+   Apply both classes only to wordmark renderings (H1 headers, footer brand):
+     <span class="brand-wordmark">FI<span class="brand-italic">ncoming</span></span>
+   - .brand-wordmark gives the whole word the serif typeface (distinctive
+     serifs on the capital I, high stroke contrast).
+   - .brand-italic italicizes the "ncoming" tail to visually resolve the
+     FI + Incoming portmanteau.
+   Do NOT apply to body copy mentions of the product name or to <title> tags. */
+.brand-wordmark {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+.brand-italic { font-style: italic; }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
