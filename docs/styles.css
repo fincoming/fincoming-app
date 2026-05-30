@@ -17,6 +17,16 @@
 }
 .brand-italic { font-style: italic; }
 
+/* Wordmark-styled F and I letters used inside the slogan to evoke
+   the FIncoming logo without screaming the brand name twice in a row.
+   Applied to the leading F in "Financial" and the leading I in "Independence". */
+.brand-fi-letter {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 1.15em;
+  color: #e8edf5;
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -28,6 +38,9 @@ body {
 
 a { color: #12b2a0; }
 
+/* =====================================================================
+   Header — preserved across landing and legal pages.
+   ===================================================================== */
 .site-header {
   background: linear-gradient(160deg, #1a2238 0%, #101e3c 55%, #1e1838 100%);
   color: #fff;
@@ -41,14 +54,23 @@ a { color: #12b2a0; }
   letter-spacing: -0.5px;
 }
 
+.site-header .brand-tagline {
+  margin-top: 10px;
+  color: #c4cad6;
+  font-size: 1.05rem;
+  font-style: italic;
+  font-family: 'Playfair Display', Georgia, serif;
+  letter-spacing: 0.2px;
+}
+
 .site-header p {
-  margin-top: 8px;
+  margin-top: 6px;
   color: #a0aec0;
   font-size: 0.95rem;
 }
 
 .site-nav {
-  margin-top: 20px;
+  margin-top: 22px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -64,18 +86,23 @@ a { color: #12b2a0; }
   border-radius: 999px;
 }
 
-.site-nav a:hover {
-  background: rgba(255, 255, 255, 0.08);
-}
+.site-nav a:hover { background: rgba(255, 255, 255, 0.08); }
 
+/* =====================================================================
+   <main> — narrow default for legal pages; widened for landing.
+   ===================================================================== */
 main {
   max-width: 720px;
   margin: 48px auto;
   padding: 0 24px 80px;
 }
 
-main.narrow-top {
-  margin-top: 32px;
+main.narrow-top { margin-top: 32px; }
+
+main.landing-main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
 }
 
 h2 {
@@ -86,18 +113,16 @@ h2 {
   color: #101e3c;
 }
 
-h2:first-child {
-  margin-top: 0;
-}
+h2:first-child { margin-top: 0; }
 
 p { margin-bottom: 14px; }
 
-ul, ol {
-  margin: 0 0 14px 24px;
-}
-
+ul, ol { margin: 0 0 14px 24px; }
 li { margin-bottom: 6px; }
 
+/* =====================================================================
+   Legal-page hero card (kept for privacy/terms/support pages).
+   ===================================================================== */
 .hero-card {
   background: #fff;
   border-radius: 16px;
@@ -106,53 +131,578 @@ li { margin-bottom: 6px; }
   margin-bottom: 24px;
 }
 
-.hero-card h2 {
-  margin-top: 0;
-  font-size: 1.35rem;
-}
+.hero-card h2 { margin-top: 0; font-size: 1.35rem; }
 
-.tagline {
-  font-size: 1.05rem;
-  color: #3a3a3c;
-}
+.tagline { font-size: 1.05rem; color: #3a3a3c; }
 
-.cta-row {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
+.cta-row { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 12px; }
 
+/* =====================================================================
+   Buttons.
+   ===================================================================== */
 .button {
   display: inline-block;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 10px 18px;
+  padding: 12px 22px;
   border-radius: 10px;
   background: #12b2a0;
   color: #fff !important;
+  transition: transform 0.08s ease, box-shadow 0.12s ease;
+}
+
+.button.primary {
+  background: #12b2a0;
+  color: #fff !important;
+  box-shadow: 0 6px 18px rgba(18, 178, 160, 0.32);
+}
+
+.button.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(18, 178, 160, 0.42);
 }
 
 .button.secondary {
   background: transparent;
   color: #101e3c !important;
   border: 1px solid #c7c7cc;
+  box-shadow: none;
 }
 
+.button.secondary:hover { background: #f0f0f3; }
+
+/* =====================================================================
+   Disclaimer box (shared).
+   ===================================================================== */
 .disclaimer-box {
   background: #fff8f0;
   border: 1px solid #f0dcc8;
   border-radius: 12px;
   padding: 16px 18px;
-  font-size: 0.95rem;
-  margin: 20px 0;
+  font-size: 0.92rem;
+  margin: 40px auto 0;
+  max-width: 760px;
 }
 
+/* =====================================================================
+   Footer (shared).
+   ===================================================================== */
 footer {
   text-align: center;
   padding: 32px;
   font-size: 0.85rem;
   color: #6e6e73;
   border-top: 1px solid #e0e0e5;
+  margin-top: 40px;
+}
+
+footer a { color: #6e6e73; }
+
+/* =====================================================================
+   LANDING — shared section heading.
+   ===================================================================== */
+.section-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #101e3c;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+/* =====================================================================
+   HERO — split layout: copy left, phone right.
+   ===================================================================== */
+.hero-section {
+  padding: 64px 0 48px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.hero-copy { text-align: left; }
+
+.hero-headline {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  color: #101e3c;
+  margin: 0 0 16px;
+  line-height: 1.12;
+}
+
+.hero-sub {
+  font-size: 1.08rem;
+  color: #3a3a3c;
+  margin: 0 0 18px;
+  line-height: 1.6;
+}
+
+.hero-bullets {
+  list-style: none;
+  margin: 0 0 26px;
+  padding: 0;
+}
+
+.hero-bullets li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 8px;
+  font-size: 0.98rem;
+  color: #3a3a3c;
+}
+
+.hero-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  background: #12b2a0;
+  border-radius: 50%;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-phone {
+  width: 280px;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow:
+    0 24px 60px rgba(16, 30, 60, 0.24),
+    0 4px 14px rgba(16, 30, 60, 0.10);
+  border: 1px solid rgba(16, 30, 60, 0.06);
+  background: #000;
+}
+
+.hero-phone img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =====================================================================
+   FEATURE GRID — three cards.
+   ===================================================================== */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 56px auto;
+  max-width: 940px;
+}
+
+.feature-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 22px;
+  box-shadow: 0 6px 20px rgba(16, 30, 60, 0.06);
+  border: 1px solid rgba(16, 30, 60, 0.04);
+}
+
+.feature-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #101e3c;
+  margin: 0 0 8px;
+  letter-spacing: -0.2px;
+}
+
+.feature-card p {
+  font-size: 0.92rem;
+  color: #3a3a3c;
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* =====================================================================
+   SCREENSHOT STRIP — large phones with horizontal scroll on every viewport.
+   ===================================================================== */
+.screenshot-strip-section {
+  margin: 72px auto;
+  max-width: 1180px;
+  position: relative;
+}
+
+.screenshot-strip {
+  display: flex;
+  gap: 22px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 24px 24px 32px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.screenshot {
+  flex: 0 0 240px;
+  max-width: 240px;
+  scroll-snap-align: center;
+  text-align: center;
+  margin: 0;
+}
+
+.screenshot img {
+  width: 100%;
+  height: auto;
+  border-radius: 28px;
+  box-shadow: 0 14px 36px rgba(16, 30, 60, 0.16);
+  display: block;
+  background: #000;
+}
+
+.screenshot figcaption {
+  margin-top: 14px;
+  font-size: 0.88rem;
+  color: #3a3a3c;
+  font-weight: 600;
+  padding: 0 8px;
+  line-height: 1.4;
+}
+
+/* Subtle fade on the right edge to signal "more to scroll". */
+.screenshot-strip-section::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  bottom: 32px;
+  right: 0;
+  width: 60px;
+  background: linear-gradient(to right, rgba(245, 245, 247, 0), rgba(245, 245, 247, 0.95));
+  pointer-events: none;
+}
+
+/* =====================================================================
+   DEMO SECTION — phone mockup with chip toggle + autoplay videos.
+   ===================================================================== */
+.demo-section {
+  margin: 80px auto 64px;
+  text-align: center;
+}
+
+.demo-intro {
+  font-size: 1rem;
+  color: #4a4a4f;
+  max-width: 480px;
+  margin: 0 auto 22px;
+}
+
+.demo-chips {
+  display: inline-flex;
+  background: #ebeef3;
+  border-radius: 999px;
+  padding: 4px;
+  margin-bottom: 28px;
+  gap: 2px;
+}
+
+.demo-chip {
+  background: transparent;
+  border: none;
+  color: #3a3a3c;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.demo-chip.is-active {
+  background: #12b2a0;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(18, 178, 160, 0.28);
+}
+
+.demo-chip:focus-visible {
+  outline: 2px solid #12b2a0;
+  outline-offset: 2px;
+}
+
+.phone-mockup-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.phone-frame {
+  width: 320px;
+  height: 696px;
+  background: #1a1a1c;
+  border-radius: 52px;
+  padding: 10px;
+  position: relative;
+  box-shadow:
+    0 30px 70px rgba(16, 30, 60, 0.28),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-radius: 44px;
+  overflow: hidden;
+  position: relative;
+}
+
+.phone-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.demo-caption {
+  font-size: 0.98rem;
+  color: #3a3a3c;
+  margin: 26px auto 8px;
+  max-width: 520px;
+  line-height: 1.5;
+}
+
+.demo-caption strong { color: #101e3c; }
+
+.demo-illustrative {
+  text-align: center;
+  font-size: 0.82rem;
+  color: #8a8a8e;
+  font-style: italic;
+  margin: 6px 0 0;
+}
+
+/* =====================================================================
+   DEPTH SECTION — paired layout: copy left, per-year detail phone right.
+   ===================================================================== */
+.depth-section {
+  margin: 88px auto 64px;
+}
+
+.depth-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.depth-copy { text-align: left; }
+
+.depth-heading {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.depth-list {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #101e3c;
+  letter-spacing: -0.2px;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.depth-sub {
+  font-size: 0.98rem;
+  color: #4a4a4f;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.depth-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.depth-phone {
+  width: 280px;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow:
+    0 24px 60px rgba(16, 30, 60, 0.24),
+    0 4px 14px rgba(16, 30, 60, 0.10);
+  border: 1px solid rgba(16, 30, 60, 0.06);
+  background: #000;
+}
+
+.depth-phone img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =====================================================================
+   PRICING SECTION.
+   ===================================================================== */
+.pricing-section {
+  margin: 72px auto;
+  max-width: 960px;
+  text-align: center;
+}
+
+.pricing-sub {
+  font-size: 0.95rem;
+  color: #4a4a4f;
+  max-width: 640px;
+  margin: 0 auto 28px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.pricing-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 22px;
+  box-shadow: 0 6px 20px rgba(16, 30, 60, 0.06);
+  border: 1px solid rgba(16, 30, 60, 0.04);
+  text-align: center;
+}
+
+.pricing-card-featured {
+  border: 2px solid #12b2a0;
+  box-shadow: 0 10px 28px rgba(18, 178, 160, 0.18);
+  position: relative;
+}
+
+.pricing-tier {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #6e6e73;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.pricing-price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #101e3c;
+  margin: 0 0 4px;
+  letter-spacing: -0.8px;
+}
+
+.pricing-period {
+  font-size: 0.85rem;
+  color: #6e6e73;
+  margin: 0 0 10px;
+}
+
+.pricing-note {
+  font-size: 0.85rem;
+  color: #3a3a3c;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* =====================================================================
+   PRIVACY SECTION.
+   ===================================================================== */
+.privacy-section {
+  max-width: 720px;
+  margin: 72px auto 0;
+  text-align: center;
+}
+
+.privacy-section p {
+  font-size: 0.98rem;
+  color: #3a3a3c;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* =====================================================================
+   RESPONSIVE — stack hero + depth, shrink phone, single-col grids.
+   ===================================================================== */
+@media (max-width: 820px) {
+  .hero-grid,
+  .depth-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero-copy,
+  .depth-copy { text-align: center; }
+
+  .depth-heading { text-align: center; }
+
+  .hero-bullets {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .hero-cta { justify-content: center; }
+}
+
+@media (max-width: 720px) {
+  .hero-headline { font-size: 2rem; }
+  .hero-sub      { font-size: 0.98rem; }
+
+  .feature-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+
+  .feature-grid { margin: 48px auto; }
+
+  .section-heading { font-size: 1.3rem; }
+
+  .depth-list { font-size: 1.05rem; }
+
+  .screenshot { flex: 0 0 200px; max-width: 200px; }
+  .screenshot img { border-radius: 24px; }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta .button { text-align: center; }
+
+  .hero-phone,
+  .depth-phone { width: 240px; }
+
+  .phone-frame {
+    width: 286px;
+    height: 624px;
+    border-radius: 46px;
+    padding: 9px;
+  }
+
+  .phone-screen { border-radius: 38px; }
+
+  .demo-chips { font-size: 0.85rem; }
+  .demo-chip  { padding: 7px 14px; font-size: 0.85rem; }
 }

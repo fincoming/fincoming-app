@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="FIncoming — retirement and financial-independence scenario planning for iPhone." />
-  <title>FIncoming — Retirement scenario planner</title>
+  <meta name="description" content="FIncoming — tax-aware retirement scenario planning for iPhone. Pull a lever. Watch your plan respond." />
+  <title>FIncoming — Tax-aware retirement scenario planning</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <header class="site-header">
   <h1><span class="brand-wordmark">FI<span class="brand-italic">ncoming</span></span></h1>
-  <p class="brand-tagline">Financial independence is incoming.</p>
-  <p>Plan your retirement in scenarios — see what changes today mean decades from now.</p>
+  <p class="brand-tagline">Your <span class="brand-fi-letter">F</span>inancial <span class="brand-fi-letter">I</span>ndependence is incoming.</p>
   <nav class="site-nav" aria-label="Site">
     <a href="support/">Support</a>
     <a href="privacy/">Privacy</a>
@@ -20,44 +19,187 @@
   </nav>
 </header>
 
-<main class="narrow-top">
+<main class="landing-main">
 
-  <div class="hero-card">
-    <h2>Scenario planning for FIRE and near-retirees</h2>
-    <p class="tagline">
-      FIncoming models taxes, Social Security, RMDs, Roth conversions, and spending year-by-year
-      so you can compare a baseline plan against “what if” changes — without spreadsheets.
+  <!-- ============================================================
+       HERO — split layout: copy + CTAs on left, phone screenshot on right.
+       ============================================================ -->
+  <section class="hero-section">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h2 class="hero-headline">Retirement math, on your terms.</h2>
+        <p class="hero-sub">
+          A scenario planner for people approaching retirement. Set up your household once.
+          Then pull a lever — retire age, Social Security claim, Roth conversion, Pre-59½ access — and watch every projected number respond in real time.
+        </p>
+        <ul class="hero-bullets">
+          <li>Federal, state, IRMAA, and Medicare modeled year by year</li>
+          <li>Per-spouse retirement ages, claim ages, and lifespan</li>
+          <li>Up to 5 saved scenarios, side-by-side compare</li>
+          <li>On-device — your financial figures never leave your iPhone</li>
+        </ul>
+        <div class="hero-cta">
+          <a class="button primary" href="https://testflight.apple.com/join/KpQGfSPK">Try the public beta</a>
+          <a class="button secondary" href="mailto:fincoming.admin@gmail.com?subject=Notify%20me%20at%20launch">Notify me at launch</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-phone">
+          <img src="assets/screenshots/iphone_hero.png" alt="FIncoming dashboard showing a Viable plan with net worth chart and lever strip" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FEATURE GRID — three cards.
+       ============================================================ -->
+  <section class="feature-grid">
+    <div class="feature-card">
+      <h3>Tax-aware</h3>
+      <p>Federal. State. IRMAA. Medicare. Year by year, not a single rate.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Per-spouse</h3>
+      <p>Two ages, two retirements, two Social Security claims, modeled independently.</p>
+    </div>
+    <div class="feature-card">
+      <h3>On-device</h3>
+      <p>No accounts. No cloud. Your financial figures never leave your iPhone.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SCREENSHOT STRIP.
+       ============================================================ -->
+  <section class="screenshot-strip-section">
+    <h2 class="section-heading">Every lever. Every number. Live.</h2>
+    <div class="screenshot-strip" role="region" aria-label="App screenshots">
+      <figure class="screenshot">
+        <img src="assets/screenshots/iphone_1_rescue.png" alt="Dashboard showing plan flip from caution to viable" loading="lazy" />
+        <figcaption>From caution to confident. One lever.</figcaption>
+      </figure>
+      <figure class="screenshot">
+        <img src="assets/screenshots/iphone_2_taxes.png" alt="Lifetime tax breakdown by year and category" loading="lazy" />
+        <figcaption>Taxes, modeled with depth.</figcaption>
+      </figure>
+      <figure class="screenshot">
+        <img src="assets/screenshots/iphone_spending.png" alt="Spending detail showing year-by-year funding sources stacked by Social Security, taxable, pre-tax, and Roth" loading="lazy" />
+        <figcaption>Every year. Every source.</figcaption>
+      </figure>
+      <figure class="screenshot">
+        <img src="assets/screenshots/iphone_3_scenarios.png" alt="Saved scenarios compare view" loading="lazy" />
+        <figcaption>Plan A. Plan B. Retire-at-58.</figcaption>
+      </figure>
+      <figure class="screenshot">
+        <img src="assets/screenshots/iphone_4_confidence.png" alt="Monte Carlo stress test results" loading="lazy" />
+        <figcaption>Simulate your chances.</figcaption>
+      </figure>
+      <figure class="screenshot">
+        <img src="assets/screenshots/iphone_5_privacy.png" alt="Privacy and Face ID lock settings" loading="lazy" />
+        <figcaption>Your money. Your phone. Nobody else's.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       INTERACTIVE DEMO — phone frame with chip toggle between two videos.
+       ============================================================ -->
+  <section class="demo-section">
+    <h2 class="section-heading">See a lever in action</h2>
+    <p class="demo-intro">Pick a lever. Watch the plan respond.</p>
+
+    <div class="demo-chips" role="tablist" aria-label="Lever videos">
+      <button class="demo-chip is-active" data-video="rule_of_55" role="tab" aria-selected="true">Pre-59½ Access</button>
+      <button class="demo-chip" data-video="side_income" role="tab" aria-selected="false">Side income</button>
+    </div>
+
+    <div class="phone-mockup-wrap">
+      <div class="phone-frame" aria-label="App demo video">
+        <div class="phone-screen">
+          <video
+            id="demo-video"
+            class="phone-video"
+            src="assets/videos/rule_of_55.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            aria-label="Activating Pre-59½ access flips the plan from Locked to Viable.">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <p class="demo-caption" id="demo-caption">
+      <strong>Pre-59½ Access:</strong> Activating Rule of 55 + 72(t)/SEPP flips the plan from Locked to Viable, 0% to 81%.
     </p>
-    <div class="disclaimer-box">
-      <strong>Not financial advice.</strong> FIncoming is an educational planning tool.
-      Projections use simplified models. Consult a licensed professional before making financial decisions.
+    <p class="demo-illustrative">Recorded from the actual app. Numbers reflect a real engine projection for the displayed household.</p>
+  </section>
+
+  <!-- ============================================================
+       MATH DEPTH CREDIBILITY — paired with per-year detail screenshot.
+       ============================================================ -->
+  <section class="depth-section">
+    <div class="depth-grid">
+      <div class="depth-copy">
+        <h2 class="section-heading depth-heading">Tap any year. See every dollar.</h2>
+        <p class="depth-list">Year-by-year. Per-spouse. Tax-aware. Iterative gross-up. IRMAA lookback. RMD per IRS Uniform Lifetime Table.</p>
+        <p class="depth-sub">
+          For any projection year, drill down to the full breakdown — earned income, Social Security, AGI, federal and state tax, effective rate, withdrawal sources, RMDs, Roth conversions, end-of-year balances. Side-by-side comparison against your current plan.
+        </p>
+      </div>
+      <div class="depth-visual">
+        <div class="depth-phone">
+          <img src="assets/screenshots/iphone_per_year_detail.png" alt="Year 2050 details sheet showing income, taxes, withdrawals, and balances with current vs updated columns" loading="lazy" />
+        </div>
+      </div>
     </div>
-    <div class="cta-row">
-      <a class="button secondary" href="support/">Get support</a>
-      <a class="button secondary" href="privacy/">Privacy policy</a>
+  </section>
+
+  <!-- ============================================================
+       PRICING.
+       ============================================================ -->
+  <section class="pricing-section">
+    <h2 class="section-heading">Pricing</h2>
+    <p class="pricing-sub">Free tier includes the projection engine, Monte Carlo, and 5 core levers. Paid unlocks Pre-59½ access, Roth optimization, scenario compare, and year-by-year drill-down.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <p class="pricing-tier">Day Pass</p>
+        <p class="pricing-price">$4.99</p>
+        <p class="pricing-period">24 hours</p>
+        <p class="pricing-note">One-time. Full access, one day.</p>
+      </div>
+      <div class="pricing-card pricing-card-featured">
+        <p class="pricing-tier">Annual</p>
+        <p class="pricing-price">$29.99</p>
+        <p class="pricing-period">per year</p>
+        <p class="pricing-note">Auto-renews. Cancel anytime.</p>
+      </div>
+      <div class="pricing-card">
+        <p class="pricing-tier">Lifetime</p>
+        <p class="pricing-price">$99.99</p>
+        <p class="pricing-period">one-time</p>
+        <p class="pricing-note">One payment. Future updates included.</p>
+      </div>
     </div>
+  </section>
+
+  <!-- ============================================================
+       PRIVACY.
+       ============================================================ -->
+  <section class="privacy-section">
+    <h2 class="section-heading">Your data stays on your device</h2>
+    <p>Plan inputs are stored locally on your iPhone with SwiftData. We do not require an account. We do not receive your financial figures on our servers. Deleting the app permanently deletes your data. See the <a href="privacy/">Privacy Policy</a> for details.</p>
+  </section>
+
+  <!-- ============================================================
+       DISCLAIMER.
+       ============================================================ -->
+  <div class="disclaimer-box">
+    <strong>Not financial advice.</strong> FIncoming is an educational planning tool. Projections use simplified models and the assumptions you provide. Consult a licensed financial or tax professional before making decisions.
   </div>
-
-  <h2>What you can explore</h2>
-  <ul>
-    <li>Retirement age, Social Security claim age, and spending assumptions</li>
-    <li>Stress-tested market paths vs. a baseline plan</li>
-    <li>Roth conversion strategy and state-of-residence changes</li>
-    <li>Year-by-year viability — when the plan runs out of money, if ever</li>
-  </ul>
-
-  <h2>Your data stays on your device</h2>
-  <p>
-    Plan inputs are stored locally on your iPhone with SwiftData. We do not require an account,
-    and we do not receive your financial figures on our servers.
-    See the <a href="privacy/">Privacy Policy</a> for details.
-  </p>
-
-  <h2>App Store</h2>
-  <p>
-    FIncoming is in development. This page will link to the App Store listing when the app is available.
-    For TestFlight or launch questions, <a href="mailto:fincoming.admin@gmail.com">contact us</a>.
-  </p>
 
 </main>
 
@@ -65,7 +207,44 @@
   &copy; 2026 Fincoming LLC &nbsp;·&nbsp; <span class="brand-wordmark">FI<span class="brand-italic">ncoming</span></span>
   &nbsp;·&nbsp; <a href="privacy/">Privacy</a>
   &nbsp;·&nbsp; <a href="terms/">Terms</a>
+  &nbsp;·&nbsp; <a href="support/">Support</a>
 </footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var video   = document.getElementById('demo-video');
+  var caption = document.getElementById('demo-caption');
+  var chips   = document.querySelectorAll('.demo-chip');
+
+  if (!video || !chips.length) return;
+
+  var captions = {
+    rule_of_55: '<strong>Pre-59½ Access:</strong> Activating Rule of 55 + 72(t)/SEPP flips the plan from Locked to Viable, 0% to 81%.',
+    side_income: '<strong>Side income:</strong> Modeling $79K/yr of consulting income lifts the plan from 68% to 88% and grows ending net worth by $3.8M.'
+  };
+
+  Array.prototype.forEach.call(chips, function (chip) {
+    chip.addEventListener('click', function () {
+      var key = chip.getAttribute('data-video');
+      if (!captions[key]) return;
+
+      Array.prototype.forEach.call(chips, function (c) {
+        c.classList.toggle('is-active', c === chip);
+        c.setAttribute('aria-selected', c === chip ? 'true' : 'false');
+      });
+
+      video.src = 'assets/videos/' + key + '.mp4';
+      video.load();
+      var p = video.play();
+      if (p && typeof p.catch === 'function') p.catch(function () {});
+
+      caption.innerHTML = captions[key];
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
